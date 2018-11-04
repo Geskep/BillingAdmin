@@ -10,6 +10,7 @@ import {LoginComponent} from './views/login/login.component';
 import {RegisterComponent} from './views/register/register.component';
 import {UserFormComponent} from './user/user-form/user-form.component';
 import {AssociatedFormComponent} from './associated/associated-form/associated-form.component';
+import {IncomeFormComponent} from './income/income-form/income-form.component';
 
 export const routes: Routes = [
   {
@@ -59,6 +60,10 @@ export const routes: Routes = [
       {
         path: 'associated/new',
         component: AssociatedFormComponent
+      },
+      {
+        path: 'income/new',
+        component: IncomeFormComponent
       },
       {
         path: 'base',

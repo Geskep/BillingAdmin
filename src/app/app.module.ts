@@ -42,6 +42,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserFormComponent } from './user/user-form/user-form.component';
 import { AssociatedFormComponent } from './associated/associated-form/associated-form.component';
+import { IncomeFormComponent } from './income/income-form/income-form.component';
 
 @NgModule({
   imports: [
@@ -66,7 +67,8 @@ import { AssociatedFormComponent } from './associated/associated-form/associated
     RegisterComponent,
     UserListComponent,
     UserFormComponent,
-    AssociatedFormComponent
+    AssociatedFormComponent,
+    IncomeFormComponent
   ],
   providers: [{
     provide: LocationStrategy,
