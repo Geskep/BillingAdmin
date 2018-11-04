@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-header">
+    <strong>Desembolso</strong>
+  </div>
+  <div class="card-body">
+    <form action="" method="post">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="type">Tipo</label>
+        <div class="col-md-9">
+          <select id="type" name="type" class="form-control">
+            <option value="0">Geskep</option>
+            <option value="1">Geskep Media</option>
+            <option value="2">Geskep Factory</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="outcome">Desembolso</label>
+        <div class="col-md-9">
+          <input type="text" id="outcome" name="outcome" class="form-control" placeholder="10000">
+          <span class="help-block">Ingrese el monto</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="concept">Concepto</label>
+        <div class="col-md-9">
+          <input type="text" id="concept" name="concept" class="form-control" placeholder="Por concepto de ..">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="description">Descripcion</label>
+        <div class="col-md-9">
+          <textarea id="description" name="description" rows="9" class="form-control" placeholder="descripcion"></textarea>
+        </div>
+      </div>
+    </form>
+    <div class="card-footer">
+      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Guardar</button>
+      <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Limpiar</button>
+    </div>
+  </div>
+</div>
