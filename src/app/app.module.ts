@@ -43,6 +43,7 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { UserFormComponent } from './user/user-form/user-form.component';
 import { AssociatedFormComponent } from './associated/associated-form/associated-form.component';
 import { IncomeFormComponent } from './income/income-form/income-form.component';
+import { OutcomeFormComponent } from './outcome/outcome-form/outcome-form.component';
 
 @NgModule({
   imports: [
@@ -68,7 +69,8 @@ import { IncomeFormComponent } from './income/income-form/income-form.component'
     UserListComponent,
     UserFormComponent,
     AssociatedFormComponent,
-    IncomeFormComponent
+    IncomeFormComponent,
+    OutcomeFormComponent
   ],
   providers: [{
     provide: LocationStrategy,
