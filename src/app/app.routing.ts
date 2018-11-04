@@ -1,14 +1,15 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
 // Import Containers
-import { DefaultLayoutComponent } from './containers';
+import {DefaultLayoutComponent} from './containers';
 
-import { P404Component } from './views/error/404.component';
-import { P500Component } from './views/error/500.component';
-import { LoginComponent } from './views/login/login.component';
-import { RegisterComponent } from './views/register/register.component';
+import {P404Component} from './views/error/404.component';
+import {P500Component} from './views/error/500.component';
+import {LoginComponent} from './views/login/login.component';
+import {RegisterComponent} from './views/register/register.component';
 import {UserFormComponent} from './user/user-form/user-form.component';
+import {AssociatedFormComponent} from './associated/associated-form/associated-form.component';
 
 export const routes: Routes = [
   {
@@ -56,6 +57,10 @@ export const routes: Routes = [
         component: UserFormComponent
       },
       {
+        path: 'associated/new',
+        component: AssociatedFormComponent
+      },
+      {
         path: 'base',
         loadChildren: './views/base/base.module#BaseModule'
       },
@@ -92,7 +97,8 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

@@ -39,6 +39,9 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { UserFormComponent } from './user/user-form/user-form.component';
+import { AssociatedFormComponent } from './associated/associated-form/associated-form.component';
 
 @NgModule({
   imports: [
@@ -60,7 +63,10 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     P404Component,
     P500Component,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserListComponent,
+    UserFormComponent,
+    AssociatedFormComponent
   ],
   providers: [{
     provide: LocationStrategy,
