@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-header">
+    <strong>Usuario</strong>
+  </div>
+  <div class="card-body">
+    <form action="" method="post">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="text-input">Usuario</label>
+        <div class="col-md-9">
+          <input type="text" id="text-input" name="text-input" class="form-control" placeholder="Usuario">
+          <span class="help-block">Ingrese el usuario</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="email-input">Email</label>
+        <div class="col-md-9">
+          <input type="email" id="email-input" name="email-input" class="form-control" placeholder="Email"
+                 autocomplete="email">
+          <span class="help-block">Ingrese su Email</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="select1">Rol</label>
+        <div class="col-md-9">
+          <select id="select1" name="select1" class="form-control">
+            <option value="user">Usuario</option>
+            <option value="sudo">Super Usuario</option>
+            <option value="admin">Administrador</option>
+            <option value="user">Usuario</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="email-input">Activo</label>
+        <div class="col-md-9">
+          <label class="switch switch-label switch-success">
+            <input type="checkbox" class="switch-input" checked>
+            <span class="switch-slider" data-checked="&#x2713;" data-unchecked="&#x2715;"></span>
+          </label>
+        </div>
+      </div>
+    </form>
+    <div class="card-footer">
+      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+      <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+    </div>
+  </div>
+</div>
