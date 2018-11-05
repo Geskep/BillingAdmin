@@ -14,6 +14,7 @@ import {IncomeFormComponent} from './income/income-form/income-form.component';
 import {OutcomeFormComponent} from './outcome/outcome-form/outcome-form.component';
 import {DeducibleFormComponent} from './deducible/deducible-form/deducible-form.component';
 import {OutlayFormComponent} from './outlay/outlay-form/outlay-form.component';
+import {AssociatedListComponent} from './associated/associated-list/associated-list.component';
 
 export const routes: Routes = [
   {
@@ -63,6 +64,10 @@ export const routes: Routes = [
       {
         path: 'associated/new',
         component: AssociatedFormComponent
+      },
+      {
+        path: 'associated/list',
+        component: AssociatedListComponent
       },
       {
         path: 'income/new',
