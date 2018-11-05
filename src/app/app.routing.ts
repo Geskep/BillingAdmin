@@ -15,6 +15,8 @@ import {OutcomeFormComponent} from './outcome/outcome-form/outcome-form.componen
 import {DeducibleFormComponent} from './deducible/deducible-form/deducible-form.component';
 import {OutlayFormComponent} from './outlay/outlay-form/outlay-form.component';
 import {AssociatedListComponent} from './associated/associated-list/associated-list.component';
+import {UserListComponent} from './user/user-list/user-list.component';
+
 
 export const routes: Routes = [
   {
@@ -42,6 +44,10 @@ export const routes: Routes = [
     data: {
       title: 'Login Page'
     }
+  },
+  {
+    path: 'user/list',
+    component: UserListComponent
   },
   {
     path: 'register',

@@ -40,6 +40,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { UserListComponent } from './user/user-list/user-list.component';
+<<<<<<< HEAD
 import { UserFormComponent } from './user/user-form/user-form.component';
 import { AssociatedFormComponent } from './associated/associated-form/associated-form.component';
 import { IncomeFormComponent } from './income/income-form/income-form.component';
@@ -47,6 +48,8 @@ import { OutcomeFormComponent } from './outcome/outcome-form/outcome-form.compon
 import { DeducibleFormComponent } from './deducible/deducible-form/deducible-form.component';
 import { OutlayFormComponent } from './outlay/outlay-form/outlay-form.component';
 import { AssociatedListComponent } from './associated/associated-list/associated-list.component';
+=======
+>>>>>>> feature/user-list
 
 @NgModule({
   imports: [
@@ -76,7 +79,8 @@ import { AssociatedListComponent } from './associated/associated-list/associated
     OutcomeFormComponent,
     DeducibleFormComponent,
     OutlayFormComponent,
-    AssociatedListComponent
+    AssociatedListComponent,
+    UserListComponent
   ],
   providers: [{
     provide: LocationStrategy,
