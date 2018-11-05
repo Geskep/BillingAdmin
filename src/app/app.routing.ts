@@ -17,6 +17,7 @@ import {OutlayFormComponent} from './outlay/outlay-form/outlay-form.component';
 import {AssociatedListComponent} from './associated/associated-list/associated-list.component';
 import {UserListComponent} from './user/user-list/user-list.component';
 import {IncomeListComponent} from './income/income-list/income-list.component';
+import {OutcomeListComponent} from './outcome/outcome-list/outcome-list.component';
 
 
 export const routes: Routes = [
@@ -87,6 +88,10 @@ export const routes: Routes = [
       {
         path: 'outcome/new',
         component: OutcomeFormComponent
+      },
+      {
+        path: 'outcome/list',
+        component: OutcomeListComponent
       },
       {
         path: 'deducible/new',
