@@ -49,6 +49,7 @@ import { OutlayFormComponent } from './outlay/outlay-form/outlay-form.component'
 import { AssociatedListComponent } from './associated/associated-list/associated-list.component';
 import { IncomeListComponent } from './income/income-list/income-list.component';
 import { OutcomeListComponent } from './outcome/outcome-list/outcome-list.component';
+import { DeducibleListComponent } from './deducible/deducible-list/deducible-list.component';
 
 @NgModule({
   imports: [
@@ -81,7 +82,8 @@ import { OutcomeListComponent } from './outcome/outcome-list/outcome-list.compon
     AssociatedListComponent,
     UserListComponent,
     IncomeListComponent,
-    OutcomeListComponent
+    OutcomeListComponent,
+    DeducibleListComponent
   ],
   providers: [{
     provide: LocationStrategy,

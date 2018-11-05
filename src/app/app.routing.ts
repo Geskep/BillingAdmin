@@ -18,6 +18,7 @@ import {AssociatedListComponent} from './associated/associated-list/associated-l
 import {UserListComponent} from './user/user-list/user-list.component';
 import {IncomeListComponent} from './income/income-list/income-list.component';
 import {OutcomeListComponent} from './outcome/outcome-list/outcome-list.component';
+import {DeducibleListComponent} from './deducible/deducible-list/deducible-list.component';
 
 
 export const routes: Routes = [
@@ -96,6 +97,10 @@ export const routes: Routes = [
       {
         path: 'deducible/new',
         component: DeducibleFormComponent
+      },
+      {
+        path: 'deducible/list',
+        component: DeducibleListComponent
       },
       {
         path: 'outlay/new',
