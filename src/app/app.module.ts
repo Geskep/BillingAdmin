@@ -45,6 +45,7 @@ import { AssociatedFormComponent } from './associated/associated-form/associated
 import { IncomeFormComponent } from './income/income-form/income-form.component';
 import { OutcomeFormComponent } from './outcome/outcome-form/outcome-form.component';
 import { DeducibleFormComponent } from './deducible/deducible-form/deducible-form.component';
+import { OutlayFormComponent } from './outlay/outlay-form/outlay-form.component';
 
 @NgModule({
   imports: [
@@ -72,7 +73,8 @@ import { DeducibleFormComponent } from './deducible/deducible-form/deducible-for
     AssociatedFormComponent,
     IncomeFormComponent,
     OutcomeFormComponent,
-    DeducibleFormComponent
+    DeducibleFormComponent,
+    OutlayFormComponent
   ],
   providers: [{
     provide: LocationStrategy,

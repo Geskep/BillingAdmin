@@ -13,6 +13,7 @@ import {AssociatedFormComponent} from './associated/associated-form/associated-f
 import {IncomeFormComponent} from './income/income-form/income-form.component';
 import {OutcomeFormComponent} from './outcome/outcome-form/outcome-form.component';
 import {DeducibleFormComponent} from './deducible/deducible-form/deducible-form.component';
+import {OutlayFormComponent} from './outlay/outlay-form/outlay-form.component';
 
 export const routes: Routes = [
   {
@@ -74,6 +75,10 @@ export const routes: Routes = [
       {
         path: 'deducible/new',
         component: DeducibleFormComponent
+      },
+      {
+        path: 'outlay/new',
+        component: OutlayFormComponent
       },
       {
         path: 'base',
