@@ -46,10 +46,6 @@ export const routes: Routes = [
     }
   },
   {
-    path: 'user/list',
-    component: UserListComponent
-  },
-  {
     path: 'register',
     component: RegisterComponent,
     data: {
@@ -66,6 +62,10 @@ export const routes: Routes = [
       {
         path: 'user/new',
         component: UserFormComponent
+      },
+      {
+        path: 'user/list',
+        component: UserListComponent
       },
       {
         path: 'associated/new',
