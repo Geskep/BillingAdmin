@@ -1,29 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
+
+// ANGULAR
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
-import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
-import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-
-const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true
-};
-
-import { AppComponent } from './app.component';
-
-// Import containers
-import { DefaultLayoutComponent } from './containers';
-
-import { P404Component } from './views/error/404.component';
-import { P500Component } from './views/error/500.component';
-import { LoginComponent } from './views/login/login.component';
-import { RegisterComponent } from './views/register/register.component';
-
-const APP_CONTAINERS = [
-  DefaultLayoutComponent
-];
-
+// COREUI
 import {
   AppAsideModule,
   AppBreadcrumbModule,
@@ -32,28 +15,49 @@ import {
   AppSidebarModule,
 } from '@coreui/angular';
 
-// Import routing module
-import { AppRoutingModule } from './app.routing';
-
-// Import 3rd party components
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+// MISC
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
-import { UserListComponent } from './user/user-list/user-list.component';
-import { UserFormComponent } from './user/user-form/user-form.component';
-import { AssociatedFormComponent } from './associated/associated-form/associated-form.component';
-import { IncomeFormComponent } from './income/income-form/income-form.component';
-import { OutcomeFormComponent } from './outcome/outcome-form/outcome-form.component';
-import { DeducibleFormComponent } from './deducible/deducible-form/deducible-form.component';
-import { OutlayFormComponent } from './outlay/outlay-form/outlay-form.component';
-import { AssociatedListComponent } from './associated/associated-list/associated-list.component';
-import { IncomeListComponent } from './income/income-list/income-list.component';
-import { OutcomeListComponent } from './outcome/outcome-list/outcome-list.component';
-import { DeducibleListComponent } from './deducible/deducible-list/deducible-list.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+
+// CONTROLLERS
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app.routing';
+
+// PAGES
+import { DefaultLayoutComponent } from './pages/containers';
+import { P404Component } from './pages/error/404.component';
+import { P500Component } from './pages/error/500.component';
+import { LoginComponent } from './pages/user/login/login.component';
+import { IncomeListComponent } from './pages/income/income-list/income-list.component';
+import { IncomeFormComponent } from './pages/income/income-form/income-form.component';
+import { OutlayFormComponent } from './pages/outlay/outlay-form/outlay-form.component';
+import { OutlayListComponent } from './pages/outlay/outlay-list/outlay-list.component';
+import { DeductibleFormComponent } from './pages/deductible/deductible-form/deductible-form.component';
+import { DeductibleListComponent } from './pages/deductible/deductible-list/deductible-list.component';
+import { AssociatedListComponent } from './pages/associated/associated-list/associated-list.component';
+import { AssociatedFormComponent } from './pages/associated/associated-form/associated-form.component';
+import { UserListComponent } from './pages/user/user-list/user-list.component';
+import { UserFormComponent } from './pages/user/user-form/user-form.component';
+import { OutcomeListComponent } from './pages/outcome/outcome-list/outcome-list.component';
+import { OutcomeFormComponent } from './pages/outcome/outcome-form/outcome-form.component';
+
+// SERVICES
+import {AuthService} from './services/auth';
+import {UsersService} from './services/users';
+import {IncomesService} from './services/incomes';
+import {OutlaysService} from './services/outlays';
+import {AssociatedService} from './services/associated';
+import {DeductiblesService} from './services/deductibles';
+
+const LocationProvider = { provide: LocationStrategy, useClass: HashLocationStrategy };
 
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FormsModule,
     AppRoutingModule,
     AppAsideModule,
     AppBreadcrumbModule.forRoot(),
@@ -67,28 +71,33 @@ import { DeducibleListComponent } from './deducible/deducible-list/deducible-lis
   ],
   declarations: [
     AppComponent,
-    ...APP_CONTAINERS,
     P404Component,
     P500Component,
     LoginComponent,
-    RegisterComponent,
+    DefaultLayoutComponent,
+    IncomeFormComponent,
+    IncomeListComponent,
+    OutlayFormComponent,
+    OutlayListComponent,
+    DeductibleListComponent,
+    DeductibleFormComponent,
+    AssociatedListComponent,
+    AssociatedFormComponent,
     UserListComponent,
     UserFormComponent,
-    AssociatedFormComponent,
-    IncomeFormComponent,
     OutcomeFormComponent,
-    DeducibleFormComponent,
-    OutlayFormComponent,
-    AssociatedListComponent,
-    UserListComponent,
-    IncomeListComponent,
-    OutcomeListComponent,
-    DeducibleListComponent
+    OutcomeListComponent
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
+  providers: [
+    LocationProvider,
+    HttpClient,
+    AuthService,
+    IncomesService,
+    OutlaysService,
+    DeductiblesService,
+    AssociatedService,
+    UsersService
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

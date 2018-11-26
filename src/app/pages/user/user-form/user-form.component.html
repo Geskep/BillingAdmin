@@ -1,0 +1,54 @@
+<div class="card col-6">
+  <div class="card-header">
+    <strong>Usuario</strong>
+  </div>
+  <div class="card-body">
+    <div class="form-group col-6 d-inline-flex">
+      <label class="col-md-3 col-form-label" for="username">Usuario</label>
+      <div class="col-md-9">
+        <input type="text" id="username" class="form-control" [(ngModel)]="user.username">
+      </div>
+    </div>
+    <div class="form-group col-6 d-inline-flex">
+      <label class="col-md-3 col-form-label" for="email">Email</label>
+      <div class="col-md-9">
+        <input type="email" id="email" class="form-control" [(ngModel)]="user.email">
+      </div>
+    </div>
+    <div class="form-group col-6 d-inline-flex">
+      <label class="col-md-3 col-form-label" for="password">Clave</label>
+      <div class="col-md-9">
+        <input type="password" id="password" class="form-control" placeholder="••••" [(ngModel)]="password">
+      </div>
+    </div>
+    <div class="form-group col-6 d-inline-flex">
+      <label class="col-md-3 col-form-label" for="confirm">Confirma</label>
+      <div class="col-md-9">
+        <input type="password" id="confirm" class="form-control" placeholder="••••" [(ngModel)]="confirm">
+      </div>
+    </div>
+    <div class="form-group col-6 d-inline-flex">
+      <label class="col-md-3 col-form-label" for="role">Rol</label>
+      <div class="col-md-9">
+        <select id="role" class="form-control" [(ngModel)]="user.role">
+          <option value="superadmin">Super Administrador</option>
+          <option value="admin">Administrador</option>
+          <option value="normal">Normal</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-6 d-inline-flex">
+      <label class="col-md-3 col-form-label">Activo</label>
+      <div class="col-md-9">
+        <label class="switch switch-label switch-success" style="margin-top: 5px;">
+          <input type="checkbox" class="switch-input" [(ngModel)]="user.active">
+          <span class="switch-slider" data-checked="&#x2713;" data-unchecked="&#x2715;"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-right">
+    <button class="btn btn-sm btn-primary" (click)="save()"><i class="fa fa-save"></i> Guardar</button>&nbsp;
+    <a [routerLink]="['../']" class="btn btn-sm btn-danger"><i class="fa fa-remove"></i> Cancelar</a>
+  </div>
+</div>

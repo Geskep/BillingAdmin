@@ -1,0 +1,44 @@
+<div class="col-lg-12">
+  <div class="card">
+    <div class="card-header">
+      <i class="nav-icon icon-action-redo"></i> Entradas
+      <a class="btn btn-sm btn-success float-right" [routerLink]="['../new']"><b>+</b> Registrar Entrada</a>
+    </div>
+    <div class="card-body" no-padding-horizontal>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Asunto</th>
+          <th>Asociado</th>
+          <th>Monto</th>
+          <th>Cobrado</th>
+          <th>Fecha Efectiva</th>
+          <th>Fecha de Creación</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let income of incomes">
+          <td>{{income.description}}</td>
+          <td><a [routerLink]="['/associated/'+income.associatedId]">{{income.associated.firstName}} {{income.associated.lastName}}</a></td>
+          <td>{{income.amount}}</td>
+          <td><span class="badge badge-{{income.payed? 'success' : 'danger'}}">{{income.payed? 'Si' : 'No'}}</span></td>
+          <td>{{income.date | date:'shortDate':'UTC'}}</td>
+          <td>{{income.createdAt | date:'short'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer">
+      <ul class="pagination d-none">
+        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+        <li class="page-item active">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="card col-6">
+  <div class="card-header">
+    <strong>Asociado</strong>
+  </div>
+  <div class="card-body">
+    <div class="form-group col-6 d-inline-flex">
+      <label class="col-md-3 col-form-label" for="fistName">Nombre</label>
+      <div class="col-md-9">
+        <input type="text" id="fistName" class="form-control" [(ngModel)]="associated.firstName">
+      </div>
+    </div>
+    <div class="form-group col-6 d-inline-flex">
+      <label class="col-md-3 col-form-label" for="lastName">Apellido</label>
+      <div class="col-md-9">
+        <input type="text" id="lastName" class="form-control" [(ngModel)]="associated.lastName">
+      </div>
+    </div>
+    <div class="form-group col-6 d-inline-flex">
+      <label class="col-md-3 col-form-label" for="identification">Cedula</label>
+      <div class="col-md-9">
+        <input type="text" id="identification" class="form-control" placeholder="000-0000000-0" [(ngModel)]="associated.identification">
+      </div>
+    </div>
+    <div class="form-group col-6 d-inline-flex">
+      <label title="Fecha de Nacimiento" class="col-md-3 col-form-label" for="dob">DOB</label>
+      <div class="col-md-9">
+        <input type="date" class="form-control" id="dob" [ngModel]="associated.dob | date : 'yyyy-MM-dd' : 'UTC'" (ngModelChange)="associated.dob = $event">
+      </div>
+    </div>
+    <div class="form-group col-12 d-inline-flex">
+      <label class="col-md-2 col-form-label" for="description">Descripcion</label>
+      <div class="col-md-9">
+        <textarea id="description" rows="2" class="form-control" [(ngModel)]="associated.description"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-right">
+    <button class="btn btn-sm btn-primary" (click)="save()"><i class="fa fa-save"></i> Guardar</button>&nbsp;
+    <a [routerLink]="['../']" class="btn btn-sm btn-danger"><i class="fa fa-remove"></i> Cancelar</a>
+  </div>
+</div>
+
+
+
+

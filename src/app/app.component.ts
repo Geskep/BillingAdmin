@@ -16,5 +16,8 @@ export class AppComponent implements OnInit {
       }
       window.scrollTo(0, 0);
     });
+    if (!localStorage.getItem('userData')) {
+      this.router.navigate(['/login']);
+    }
   }
 }

@@ -1,0 +1,39 @@
+<div class="app-body">
+  <main class="main d-flex align-items-center"  style="background-color: #282828;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto"><img width="100%" src="/src/assets/img/logo.png"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mx-auto">
+          <div class="card-group">
+            <div class="card p-4">
+              <div class="card-body">
+                <h1>Inicio de Sesión</h1>
+                <p class="text-muted">Digite su usuario y contraseña</p>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-user"></i></span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Usuario" required [(ngModel)]="username">
+                </div>
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-lock"></i></span>
+                  </div>
+                  <input type="password" class="form-control" placeholder="Contraseña" required [(ngModel)]="password">
+                </div>
+                <div class="row">
+                  <div class="col-12 text-right">
+                    <button type="button" class="btn btn-primary px-4" (click)="login()">Entrar</button>
+                  </div>
+                </div>
+              </div>
+              <span *ngIf="failed" class="col-12 text-danger text-right"><i class="icon-info"></i> Credenciales incorectas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

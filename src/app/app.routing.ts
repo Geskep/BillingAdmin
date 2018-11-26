@@ -2,24 +2,57 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 // Import Containers
-import {DefaultLayoutComponent} from './containers';
+import {DefaultLayoutComponent} from './pages/containers';
 
-import {P404Component} from './views/error/404.component';
-import {P500Component} from './views/error/500.component';
-import {LoginComponent} from './views/login/login.component';
-import {RegisterComponent} from './views/register/register.component';
-import {UserFormComponent} from './user/user-form/user-form.component';
-import {AssociatedFormComponent} from './associated/associated-form/associated-form.component';
-import {IncomeFormComponent} from './income/income-form/income-form.component';
-import {OutcomeFormComponent} from './outcome/outcome-form/outcome-form.component';
-import {DeducibleFormComponent} from './deducible/deducible-form/deducible-form.component';
-import {OutlayFormComponent} from './outlay/outlay-form/outlay-form.component';
-import {AssociatedListComponent} from './associated/associated-list/associated-list.component';
-import {UserListComponent} from './user/user-list/user-list.component';
-import {IncomeListComponent} from './income/income-list/income-list.component';
-import {OutcomeListComponent} from './outcome/outcome-list/outcome-list.component';
-import {DeducibleListComponent} from './deducible/deducible-list/deducible-list.component';
+import {P404Component} from './pages/error/404.component';
+import {P500Component} from './pages/error/500.component';
+import {LoginComponent} from './pages/user/login/login.component';
+import {UserFormComponent} from './pages/user/user-form/user-form.component';
+import {AssociatedFormComponent} from './pages/associated/associated-form/associated-form.component';
+import {IncomeFormComponent} from './pages/income/income-form/income-form.component';
+import {OutcomeFormComponent} from './pages/outcome/outcome-form/outcome-form.component';
+import {DeductibleFormComponent} from './pages/deductible/deductible-form/deductible-form.component';
+import {OutlayFormComponent} from './pages/outlay/outlay-form/outlay-form.component';
+import {AssociatedListComponent} from './pages/associated/associated-list/associated-list.component';
+import {UserListComponent} from './pages/user/user-list/user-list.component';
+import {IncomeListComponent} from './pages/income/income-list/income-list.component';
+import {OutcomeListComponent} from './pages/outcome/outcome-list/outcome-list.component';
+import {DeductibleListComponent} from './pages/deductible/deductible-list/deductible-list.component';
+import {OutlayListComponent} from './pages/outlay/outlay-list/outlay-list.component';
 
+const crudRoute = (path: string, title: string, list: any, form: any) => {
+  return {
+    path: path,
+    data: { title: title },
+    children: [
+      {
+        path: '',
+        children: [
+          {
+            path: 'new',
+            component: form,
+            data: { title: 'Crear' }
+          },
+          {
+            path: 'list',
+            component: list,
+            data: { title: '' }
+          },
+          {
+            path: ':id',
+            component: form,
+            data: { title: 'Editar' }
+          },
+          {
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'list'
+          }
+        ]
+      }
+    ]
+  };
+};
 
 export const routes: Routes = [
   {
@@ -29,115 +62,27 @@ export const routes: Routes = [
   },
   {
     path: '404',
-    component: P404Component,
-    data: {
-      title: 'Page 404'
-    }
+    component: P404Component
   },
   {
     path: '500',
-    component: P500Component,
-    data: {
-      title: 'Page 500'
-    }
+    component: P500Component
   },
   {
     path: 'login',
-    component: LoginComponent,
-    data: {
-      title: 'Login Page'
-    }
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-    data: {
-      title: 'Register Page'
-    }
+    component: LoginComponent
   },
   {
     path: '',
     component: DefaultLayoutComponent,
-    data: {
-      title: 'Home'
-    },
+    data: { title: 'Inicio' },
     children: [
-      {
-        path: 'user/new',
-        component: UserFormComponent
-      },
-      {
-        path: 'user/list',
-        component: UserListComponent
-      },
-      {
-        path: 'associated/new',
-        component: AssociatedFormComponent
-      },
-      {
-        path: 'associated/list',
-        component: AssociatedListComponent
-      },
-      {
-        path: 'income/new',
-        component: IncomeFormComponent
-      },
-      {
-        path: 'income/list',
-        component: IncomeListComponent
-      },
-      {
-        path: 'outcome/new',
-        component: OutcomeFormComponent
-      },
-      {
-        path: 'outcome/list',
-        component: OutcomeListComponent
-      },
-      {
-        path: 'deducible/new',
-        component: DeducibleFormComponent
-      },
-      {
-        path: 'deducible/list',
-        component: DeducibleListComponent
-      },
-      {
-        path: 'outlay/new',
-        component: OutlayFormComponent
-      },
-      {
-        path: 'base',
-        loadChildren: './views/base/base.module#BaseModule'
-      },
-      {
-        path: 'buttons',
-        loadChildren: './views/buttons/buttons.module#ButtonsModule'
-      },
-      {
-        path: 'charts',
-        loadChildren: './views/chartjs/chartjs.module#ChartJSModule'
-      },
-      {
-        path: 'dashboard',
-        loadChildren: './views/dashboard/dashboard.module#DashboardModule'
-      },
-      {
-        path: 'icons',
-        loadChildren: './views/icons/icons.module#IconsModule'
-      },
-      {
-        path: 'notifications',
-        loadChildren: './views/notifications/notifications.module#NotificationsModule'
-      },
-      {
-        path: 'theme',
-        loadChildren: './views/theme/theme.module#ThemeModule'
-      },
-      {
-        path: 'widgets',
-        loadChildren: './views/widgets/widgets.module#WidgetsModule'
-      }
+      crudRoute('user', 'Usuarios', UserListComponent, UserFormComponent),
+      crudRoute('associated', 'Asociados', AssociatedListComponent, AssociatedFormComponent),
+      crudRoute('income', 'Entradas', IncomeListComponent, IncomeFormComponent),
+      crudRoute('outcome', 'Salidas', OutcomeListComponent, OutcomeFormComponent),
+      crudRoute('deductible', 'Deducibles', DeductibleListComponent, DeductibleFormComponent),
+      crudRoute('outlay', 'Desembolso', OutlayListComponent, OutlayFormComponent)
     ]
   }
 ];
