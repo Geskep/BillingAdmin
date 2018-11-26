@@ -140,7 +140,7 @@ export class OutlayFormComponent implements OnInit {
       });
       this.outlaysService.create(this.outlay).subscribe(
         () => {
-          if (this.outlay.amount < 0) { this.outlay.associated.due += this.outlay.amount; }
+          if (this.outlay.amount < 0) { this.outlay.associated.due += this.outlay.amount * -1; }
           this.associatedService.update(this.outlay.associated).subscribe(
             () => { this.router.navigate(['/outlay/list']); },
             (err) => { console.log(err); }
